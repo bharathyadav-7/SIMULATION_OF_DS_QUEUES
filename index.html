@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRM Bank - Queue System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon">SRM</div>
+                <h1>SRM Bank</h1>
+            </div>
+            <p class="tagline">Smart Queue Management</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Left Panel: Controls & Status -->
+            <section class="control-panel glass-panel">
+                <div class="current-status">
+                    <h2>Now Serving</h2>
+                    <div class="token-display large" id="current-token-display">
+                        <span class="token-label">Token No.</span>
+                        <span class="token-number" id="now-serving-number">--</span>
+                    </div>
+                    <div class="status-message" id="status-message">Counter Closed</div>
+                </div>
+
+                <div class="actions">
+                    <button id="btn-enqueue" class="btn btn-primary">
+                        <span class="icon">+</span> Get Token
+                    </button>
+                    <button id="btn-dequeue" class="btn btn-secondary">
+                        <span class="icon">✓</span> Serve Next
+                    </button>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <span class="stat-label">Waiting</span>
+                        <span class="stat-value" id="waiting-count">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Total Issued</span>
+                        <span class="stat-value" id="total-issued">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Panel: The Queue -->
+            <section class="queue-panel glass-panel">
+                <div class="panel-header">
+                    <h2>Waiting Queue</h2>
+                    <span class="badge" id="queue-badge">0</span>
+                </div>
+                <div class="queue-list-container">
+                    <ul id="queue-list" class="queue-list">
+                        <!-- Queue items will be injected here -->
+                        <li class="empty-state">
+                            <p>Queue is currently empty.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="next-up">
+                    <span class="next-label">Next Up:</span>
+                    <span class="next-value" id="next-token-preview">--</span>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
